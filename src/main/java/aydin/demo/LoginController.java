@@ -23,14 +23,6 @@ public class LoginController {
     @FXML
     protected void onSigninButtonClick() throws IOException {
 
-        /*
-        Alert a = new Alert(Alert.AlertType.ERROR);
-        a.setTitle("Error in signin");
-        a.setHeaderText("Enter your username and password again...");
-        a.showAndWait();
-         */
-       // signinButton.disableProperty().bind(usernameTextField.disableProperty());
-
          FXMLLoader fxmlLoader = new FXMLLoader(DemoApp.class.getResource("dbAccess.fxml"));
          Stage stage = DemoApp.getStage();
          Scene scene = DemoApp.getScene();
