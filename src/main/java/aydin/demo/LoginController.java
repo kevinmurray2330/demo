@@ -19,7 +19,11 @@ public class LoginController {
     @FXML
     Button signinButton;
 
-
+    public void initialize(){
+        // if username or password is empty, signin buttomn is disabled
+        signinButton.disableProperty().bind(
+                usernameTextField.textProperty().isEmpty().or(passwordTextField.textProperty().isEmpty()));
+    }
     @FXML
     protected void onSigninButtonClick() throws IOException {
 

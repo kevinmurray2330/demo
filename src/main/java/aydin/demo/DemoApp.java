@@ -17,6 +17,7 @@ public class DemoApp extends Application {
         stage = theStage;
         FXMLLoader fxmlLoader = new FXMLLoader(DemoApp.class.getResource("login.fxml"));
         scene = new Scene(fxmlLoader.load(), 320, 240);
+
         stage.setScene(scene);
         stage.setTitle("Demo: Login");
         stage.show();
