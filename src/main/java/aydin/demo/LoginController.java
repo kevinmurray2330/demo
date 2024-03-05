@@ -1,5 +1,7 @@
 package aydin.demo;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.beans.property.Property;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
@@ -8,6 +10,7 @@ import javafx.scene.Scene;
 
 import javafx.scene.control.Button;
 
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Font;
@@ -21,7 +24,7 @@ public class LoginController {
     @FXML
     TextField usernameTextField;
     @FXML
-    TextField passwordTextField;
+    PasswordField passwordField;
     @FXML
     Button signinButton;
     @FXML
@@ -34,11 +37,11 @@ public class LoginController {
         //example of adding a unidirectional binding:
         // if username or password is empty, signin buttom is disabled
         signinButton.disableProperty().bind(
-                usernameTextField.textProperty().isEmpty().or(passwordTextField.textProperty().isEmpty()));
+                usernameTextField.textProperty().isEmpty().or(passwordField.textProperty().isEmpty()));
 
         // example of bidirectional binding:
         // the fontSize text field and fontSize slider grow or reduce together
-        fontSizeTextField.textProperty().bindBidirectional(fontSizeSlider.valueProperty(), new StringConverter<Number>() {
+        fontSizeTextField.textProperty().bindBidirectional(fontSizeSlider.valueProperty(), new StringConverter<Number>()  {
             @Override
             public String toString(Number number) {
                 return number.toString();
@@ -58,7 +61,7 @@ public class LoginController {
                                 Number oldValue, Number newValue) {
 
                 usernameTextField.setFont(new Font(newValue.doubleValue()));
-                passwordTextField.setFont(new Font(newValue.doubleValue()));
+                passwordField.setFont(new Font(newValue.doubleValue()));
 
             }
         });
