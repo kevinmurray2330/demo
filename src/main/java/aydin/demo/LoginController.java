@@ -37,7 +37,8 @@ public class LoginController {
         //example of adding a unidirectional binding:
         // if username or password is empty, signin buttom is disabled
         signinButton.disableProperty().bind(
-                usernameTextField.textProperty().isEmpty().or(passwordField.textProperty().isEmpty()));
+                usernameTextField.textProperty().isEmpty().or(passwordField.textProperty().isEmpty())
+        );
 
         // example of bidirectional binding:
         // the fontSize text field and fontSize slider grow or reduce together
